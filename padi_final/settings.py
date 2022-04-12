@@ -77,6 +77,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -122,3 +126,4 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, ''),)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/dashboard'
 LOGOUT_REDIRECT_URL = '/dashboard'
+AUTH_PROFILE_MODULE = 'padi_app.UserProfile'

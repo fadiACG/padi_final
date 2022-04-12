@@ -1,20 +1,21 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.forms import ModelForm
+from padi_app.models import UserProfile
 
 
-# Create your forms here.
-
-class NewUserForm(UserCreationForm):
-    email = forms.EmailField(required=True)
-
+class EditProfileForm(ModelForm):
     class Meta:
         model = User
-        fields = ("username", "email", "password1", "password2")
+        fields = (
+            'email',
+            'first_name',
+            'last_name'
+        )
 
-    def save(self, commit=True):
-        user = super(NewUserForm, self).save(commit=False)
-        user.email = self.cleaned_data['email']
-        if commit:
-            user.save()
-        return user
+
+class ProfileForm(ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ('city', 'description', 'phoneNumber', 'website', 'image')  # Note that we didn't mention user field here.

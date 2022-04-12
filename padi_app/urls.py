@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.template.defaulttags import url
 from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
 from . import views
@@ -29,4 +30,7 @@ urlpatterns = [
                   path('login', LoginView.as_view(), name="login_url"),
                   path('register', views.registerView, name="register_url"),
                   path('logout', LogoutView.as_view(next_page='dashboard'), name="logout"),
+                  path('base', views.edit_profile, name="base"),
+                  path('view_profile', views.edit_profile, name="view_profile"),
+                  path('edit_profile', views.edit_profile, name="edit_profile"),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

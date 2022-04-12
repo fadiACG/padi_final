@@ -1,4 +1,12 @@
 {% extends 'index.html' %}
 {% block content %}
-    <h1>Welcome, {{user.username}}</h1>
+    {% if user.is_authenticated %}
+        <h1>Welcome, {{ user.username }}</h1>
+        <button>Logout</button>
+    {% else %}
+        <h2>Log in or Register </h2>
+        <a href="{{ login }}">Login</a>
+        <a href="{{ register }}">Register</a>
+    {% endif %}
+
 {% endblock %}
