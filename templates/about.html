@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padi & Partners Co.</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'static\style.css' %}" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+<body>
+
+{% url "index" as index %}
+{% url "about" as about %}
+{% url "properties" as properties %}
+{% url "contact" as contact %}
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href={{ index }}>
+                    <img src="{% static 'static\logo.png' %}" alt="" width="100" height="75" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href={{ index }}>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{ properties }}>Properties</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{ about }}>About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{ contact }}>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="about-us">
+            <div class="container">
+                <h1 class="title text-center">Why Padi?</h1>
+                <div class="row">
+                    <div class="col-md-6 about-us">
+                        <p class="about-title">We have...</p>
+                        <ul>
+                            <li>12 years experience</li>
+                            <li>market knowledge</li>
+                            <li>online services</li>
+                            <li>resources & connections</li>
+                            <li>honesty & integrity</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{% static 'static\whypadi.png' %}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+ <section id="reviews">
+             <div class="container">
+                 <h1 class="title text-center">Not enough? Listen to our clients</h1>
+                 <br><br>
+                 <div class="row offset-1">
+                     <div class="col-md-5 reviews">
+                        <p>I arrived in Athens and faced an issue with my old landlord. 
+                            Padi helped me find a new apartment and finalize the paperwork within a week.</p>
+                        <img src="{% static 'static\user.png' %}">
+                        <p class="user-details"><b>John</b><br>Co-founder at Tens Insurance</p>
+                     </div>
+                     <div class="col-md-5 reviews">
+                        <p>Padi is a extremely reliable agency. They are punctual in their meetings and genuinely care about
+                            their clients needs.</p>
+                        <img src="{% static 'static\user.png' %}">
+                        <p class="user-details"><b>Christina</b><br>Manager at Eurobank</p>
+                     </div>
+                     <div class="col-md-5 reviews">
+                        <p>Something I noticed is that Padi agents try to find a property that is specifically 
+                            tailored to the consumer. I will always recommend Padi to those looking for a home.</p>
+                        <img src="{% static 'static\user.png' %}">
+                        <p class="user-details"><b>Mary</b><br>HR Director at Cosmote</p>
+                     </div>
+                     <div class="col-md-5 reviews">
+                        <p>I found my first home through Padi. I was so happy, I also decided to employ their interior design services.
+                            My home really feels like it was made for me.
+                        </p>
+                        <img src="{% static 'static\user.png' %}">
+                        <p class="user-details"><b>Nick</b><br>General Manager at MyMarket</p>
+                     </div>
+                 </div>
+             </div>
+        </section>
+        <section id="creators">
+            <div class="container text-center">
+                <h1 class="title">Our Founder</h1>
+                <div class="row text-center">
+                    <div class="col creators">
+                        <img src="{% static 'static\fadi.png' %}" class="creator-img">
+                        <h4>Fadi Nuqul</h4>
+                        <p>My name is Fadi Nuqul, and I am a third year IT student at Deree. Panagiotis and I were 
+                            inspired to create Padi because of the history our families share in real estate. We look forward to seeing how this business grows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="{% static 'static\wave2.png' %}" class="footer-img">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-box">
+                    <img src="{% static 'static\logo.png' %}">
+                    <p>Padi will always prioritize the needs of our clients.
+                        We aim to create long-term relationships that guaratee your satisfacation.</p>
+                </div>
+                <div class="col-md-4 footer-box">
+                    <p><b>Contact Us</b></p>
+                    <P><span class="material-icons">place</span>Λεωφ. Βουλιαγμένης, Μιαούλη 20, Glifada 166 75 </P>
+                    <P><span class="material-icons">phone</span>+30 6912349876 </P>
+                    <P><span class="material-icons">mail</span>support@padi.com</P>
+                </div>
+            </div>
+        </div>
+        © Copyright Padi & Partners Co., 2022
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
