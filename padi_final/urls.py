@@ -18,6 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include('padi_app.urls'), name='index'),
     path('padi_app/', include('padi_app.urls')),
 ]
