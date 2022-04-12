@@ -12,7 +12,7 @@ def index(request):
     return render(request, "index.html")
 
 
-@login_required()
+#@login_required()
 def properties(request):
     return render(request, "properties.html")
 

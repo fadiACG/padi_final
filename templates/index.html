@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Padi & Partners Co.</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'static\style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'static\style.css' %}"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -24,12 +24,12 @@
 {% url "login_url" as login %}
 
 
-
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ index }}">
-                <img src="{% static 'static\logo.png' %}" alt="" width="100" height="75" class="d-inline-block align-text-top">
+                <img src="{% static 'static\logo.png' %}" alt="" width="100" height="75"
+                     class="d-inline-block align-text-top">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,22 +59,26 @@
 </header>
 
 <main>
-    {% block content %}
-        <h1>Welcome to Padi! </h1>
-        {% if user.is_authenticated %}
-             <a href="{% url 'logout' %}">Logout</a>
-        {% else %}
-            <a href="{{ login }}">Login</a>
-            <a href="{{ register }}">Register</a>
-        {% endif %}
-    {% endblock %}
+    <div class="align-content-end bg-light">
+        {% block content %}
+            {% if user.is_authenticated %}
+                <h2>Log Out </h2>
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <h2>Log in or Register </h2>
+                <a href="{{ login }}">Login</a>
+                <a href="{{ register }}">Register</a>
+            {% endif %}
+        {% endblock %}
+    </div>
     <section id="banner">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <p class="promo-title">Best Real Estate Agency in Greece</p>
                     <p class="catch-phrase">We find your dream property so you don't have to! </p>
-                    <a href="{{ contact }}"><img src="{% static 'static\apply.png' %}" alt="" class="apply-btn">Apply Now</a>
+                    <a href="{{ contact }}"><img src="{% static 'static\apply.png' %}" alt="" class="apply-btn">Apply
+                        Now</a>
                 </div>
                 <div class="col-md-6 text-center">
                     <img src="{% static 'static\logo.png' %}" alt="" class="img-fluid">
